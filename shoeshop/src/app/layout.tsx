@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"; // wrapper shadcn
-// ...
-<Toaster richColors position="top-right" />
+import CartLink from "@/components/ui/CartLink"; 
+
 
 
 const geistSans = Geist({
@@ -28,10 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <header>... <nav> <a href="/products">Produits</a> <a href="/account">Compte</a> <CartLink /> </nav> ...</header>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
